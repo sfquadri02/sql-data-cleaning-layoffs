@@ -1,11 +1,10 @@
-# sql-data-cleaning-layoffs
-SQL project focused on cleaning and preparing a global layoffs dataset using window functions, CTEs, and data standardization techniques.
+# sql-global-layoffs-analysis
+SQL project covering end-to-end data cleaning and exploratory data analysis (EDA) on a global layoffs dataset using window functions, CTEs, and analytical SQL techniques.
 
 ## Project Overview
-This project focuses on cleaning and preparing a real-world global layoffs dataset using SQL.
-The objective was to improve data quality and consistency by removing duplicate records, standardizing inconsistent values, handling nulls, and correcting data types to produce an analysis-ready dataset.
-
-A structured staging-table approach was used to preserve raw data while safely applying transformations, mirroring real-world data preparation workflows.
+This project performs an end-to-end analysis of a real-world global layoffs dataset using SQL (MySQL), covering both data cleaning & preparation and exploratory data analysis (EDA).
+The objective was to improve data quality, create an analysis-ready dataset, and derive meaningful insights into layoff trends across industries, regions, company stages, and time periods.
+A structured staging-table approach was used to preserve raw data while safely applying transformations, closely reflecting real-world data analyst workflows.
 
 ## Dataset
 - Source: Kaggle – World Layoffs Dataset (2022)
@@ -13,16 +12,27 @@ A structured staging-table approach was used to preserve raw data while safely a
 - Format: CSV
 - Description: Company-level layoff data including industry, location, date, funding, and company stage information
 
-## Data Cleaning Steps
+## Data Cleaning & Preparation
 
-- Created staging tables to retain original raw data and perform transformations safely
-- Identified and removed duplicate records using ROW_NUMBER() window functions
-- Standardized industry and country values to ensure consistency
+The first phase of the project focused on improving data quality and consistency:
+
+- Created staging tables to retain raw data and apply transformations safely
+- Identified and removed duplicate records using `ROW_NUMBER()` window functions
+- Standardized company names, industry values, and country names
 - Replaced blank values with NULL for accurate analysis
-- Populated missing industry data using self-joins on company names
-- Converted date fields from text format to proper DATE data type
-- Removed records with insufficient layoff information
-- Dropped helper columns after cleaning to finalize the dataset
+- Populated missing industry data using self-joins based on company names
+- Converted date fields from text to proper `DATE` data types
+- Removed records with insufficient or unusable layoff information
+- Dropped helper columns to finalize clean, analysis-ready tables
+
+## Exploratory Data Analysis (EDA)
+
+Once the dataset was cleaned, exploratory analysis was performed to uncover trends and patterns:
+
+- Analyzed layoffs by industry, geography, company stage, and year
+- Identified industries and regions most impacted by layoffs
+- Examined time-based trends to highlight peak layoff periods
+- Aggregated total layoffs and company counts to support business-level insights
 
 ## SQL Concepts Used
 
@@ -36,11 +46,12 @@ A structured staging-table approach was used to preserve raw data while safely a
 
 ## Outcome
 
-The final cleaned dataset is consistent, reliable, and ready for exploratory data analysis or visualization.
-This project demonstrates practical SQL data-cleaning techniques commonly used in real-world data analyst and business analyst roles.
+The project delivers a clean, structured dataset along with data-driven insights into global layoff patterns.
+It demonstrates practical SQL skills across the full data analysis lifecycle — from raw data preparation to insight generation — commonly expected in Data Analyst and Business Analyst roles.
 
 ## How to Use
 
 1. Import the raw layoffs dataset into your SQL environment
-2. Run the SQL script step-by-step to reproduce the cleaning process
-3. Use the cleaned table for analysis, reporting, or visualization
+2. Execute the data cleaning scripts to prepare the dataset
+3. Run the analysis queries to explore trends and insights
+4. Use the cleaned data for reporting, dashboards, or further analysis
